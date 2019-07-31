@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
-import Ranking from './components/Ranking';
+import Ranking from './containers/Ranking';
 
 function App() {
   return (
