@@ -6,11 +6,11 @@ const initialState = {
         },
         {
             id: '2502',
-            name: 'PC, Peripherals'
+            name: 'PC/Peripherals'
         },
         {
             id: '10002',
-            name: 'Book, Magazine, Comic'
+            name: 'Book/Magazine/Comic'
         }
     ]
 }

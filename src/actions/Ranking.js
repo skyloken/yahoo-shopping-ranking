@@ -1,3 +1,4 @@
+import { replace } from 'connected-react-router';
 import fetchJsonp from 'fetch-jsonp';
 import qs from 'qs';
 
@@ -6,40 +7,56 @@ const API_URL = 'http://shopping.yahooapis.jp/ShoppingWebService/V1/json/categor
 const APP_ID = 'dj00aiZpPWtPMENZTTMwNlByRyZzPWNvbnN1bWVyc2VjcmV0Jng9NTg-'
 
 // リクエスト開始
-const startRequest = categoryId => ({
+const startRequest = category => ({
     type: 'START_REQUEST',
-    payload: { categoryId }
+    payload: { category }
 })
 
 // レスポンス受信
-const receiveData = (categoryId, error, response) => ({
+const receiveData = (category, error, response) => ({
     type: 'RECEIVE_DATA',
-    payload: { categoryId, error, response }
+    payload: { category, error, response }
 })
 
 // リクエスト完了
-const finishRequest = categoryId => ({
+const finishRequest = category => ({
     type: 'FINISH_REQUEST',
-    payload: { categoryId }
+    payload: { category }
 })
 
 // ランキング取得
 export const fetchRanking = categoryId => {
-    return async dispatch => {
-        dispatch(startRequest(categoryId));
+    return async (dispatch, getState) => {
 
+        // find category
+        const categories = getState().shopping.categories;
+        const category = categories.find(category => (category.id === categoryId));
+
+        // if not found category, redirect to root
+        if (typeof category === 'undefined') {
+            dispatch(replace('/'));
+            return;
+        }
+
+        // start request
+        dispatch(startRequest(category));
+
+        // query string
         const queryString = qs.stringify({
             appid: APP_ID,
             category_id: categoryId
         });
 
+        // receive data
         try {
             const response = await fetchJsonp(`${API_URL}?${queryString}`);
             const data = await response.json();
-            dispatch(receiveData(categoryId, null, data));
+            dispatch(receiveData(category, null, data));
         } catch (err) {
-            dispatch(receiveData(categoryId, err));
+            dispatch(receiveData(category, err));
         }
-        dispatch(finishRequest(categoryId));
+
+        // finish request
+        dispatch(finishRequest(category));
     }
 }
