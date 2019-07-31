@@ -1,23 +1,18 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import Nav from './containers/Nav';
 import Ranking from './containers/Ranking';
 
 function App() {
   return (
     <div className="App">
-
-      <ul>
-        <li><Link to='/all'>All categories</Link></li>
-        <li><Link to='/category/2502'>PC, Peripherals</Link></li>
-        <li><Link to='/category/10001'>Book, Magazine, Comic</Link></li>
-      </ul>
-
-      <Route path='/all' component={Ranking} />
-
-      <Route path='/category/:id' render={
-        ({ match }) => <Ranking categoryId={match.params.id} />
-      } />
-
+      <Nav />
+      <Switch>
+        <Route path='/all' component={Ranking} />
+        <Route path='/category/:id' render={
+          ({ match }) => <Ranking categoryId={match.params.id} />
+        } />
+      </Switch>
     </div>
   );
 }
