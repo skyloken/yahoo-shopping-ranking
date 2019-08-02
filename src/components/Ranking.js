@@ -1,3 +1,4 @@
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@material-ui/core";
 import PropTypes from "prop-types";
 import React from 'react';
 
@@ -31,18 +32,32 @@ export default class Ranking extends React.Component {
                     } else {
                         // ランキング表示
                         return (
-                            <ol>
-                                {ranking.map(item => (
-                                    <li key={`ranking-item-${item.code}`}>
-                                        <img alt={item.name} src={item.imageUrl} />
-                                        <a href={item.url} target='_blank' rel='noreferrer noopener'>{item.name}</a>
-                                    </li>
-                                ))}
-                            </ol>
+                            ranking.map((item, i) => (
+                                <Card
+                                    key={`ranking-item-${item.code}`}
+                                    style={{
+                                        maxWidth: '500px', margin: '32px auto'
+                                    }}>
+                                    <CardMedia
+                                        image={item.imageUrl}
+                                        title={`No.${i + 1} ${item.name}`}
+                                        style={{ height: '200px' }} />
+                                    <CardContent>
+                                        <Typography type='title'>
+                                            {`No.${i + 1} ${item.name}`}
+                                        </Typography>
+                                    </CardContent>
+                                    <CardActions>
+                                        <Button variant='contained' color='primary' fullWidth href={item.url}>
+                                            Go to page
+                                            </Button>
+                                    </CardActions>
+                                </Card>
+                            ))
                         );
                     }
                 })()}
-            </div>
+            </div >
         );
     }
 }

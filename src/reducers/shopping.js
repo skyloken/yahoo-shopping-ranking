@@ -2,7 +2,7 @@ const initialState = {
     categories: [
         {
             id: '1',
-            name: 'All categories'
+            name: 'All Categories'
         },
         {
             id: '2502',
