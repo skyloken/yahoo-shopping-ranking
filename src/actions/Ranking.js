@@ -2,7 +2,7 @@ import { replace } from 'connected-react-router';
 import fetchJsonp from 'fetch-jsonp';
 import qs from 'qs';
 
-const API_URL = 'http://shopping.yahooapis.jp/ShoppingWebService/V1/json/categoryRanking';
+const API_URL = 'https://shopping.yahooapis.jp/ShoppingWebService/V1/json/categoryRanking';
 
 const APP_ID = 'dj00aiZpPWtPMENZTTMwNlByRyZzPWNvbnN1bWVyc2VjcmV0Jng9NTg-'
 
