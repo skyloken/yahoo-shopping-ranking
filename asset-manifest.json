@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/yahoo-shopping-ranking/static/js/main.8cbecca7.chunk.js",
-    "main.js.map": "/yahoo-shopping-ranking/static/js/main.8cbecca7.chunk.js.map",
+    "main.js": "/yahoo-shopping-ranking/static/js/main.4a63f9f9.chunk.js",
+    "main.js.map": "/yahoo-shopping-ranking/static/js/main.4a63f9f9.chunk.js.map",
     "runtime~main.js": "/yahoo-shopping-ranking/static/js/runtime~main.abf8ccc6.js",
     "runtime~main.js.map": "/yahoo-shopping-ranking/static/js/runtime~main.abf8ccc6.js.map",
     "static/js/2.7480efda.chunk.js": "/yahoo-shopping-ranking/static/js/2.7480efda.chunk.js",
     "static/js/2.7480efda.chunk.js.map": "/yahoo-shopping-ranking/static/js/2.7480efda.chunk.js.map",
     "index.html": "/yahoo-shopping-ranking/index.html",
-    "precache-manifest.51a4ceaf83267f6c4169e0e2d84fbc39.js": "/yahoo-shopping-ranking/precache-manifest.51a4ceaf83267f6c4169e0e2d84fbc39.js",
+    "precache-manifest.aca6777bcbc5b1725bed6505dc8babb8.js": "/yahoo-shopping-ranking/precache-manifest.aca6777bcbc5b1725bed6505dc8babb8.js",
     "service-worker.js": "/yahoo-shopping-ranking/service-worker.js"
   }
 }
