@@ -2,6 +2,7 @@
   "name": "yahoo-shopping-ranking",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://skyloken.github.io/yahoo-shopping-ranking/",
   "dependencies": {
     "@material-ui/core": "^4.3.0",
     "connected-react-router": "^6.5.2",
